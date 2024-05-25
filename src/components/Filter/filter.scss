@@ -1,3 +1,5 @@
+@import '../../responsive.scss';
+
 .filter{
     display: flex;
     flex-direction: column;
@@ -5,6 +7,7 @@
     h1{
         font-weight: 300;
         font-size: 24px;
+
     }
     .item{
         display: flex;
@@ -22,6 +25,9 @@
             border: 1px solid#e0e0e0;
             border-radius: 5px;
             font-size: 14px;
+            @include md{
+                width: 80px;
+            }
         }
     }
 
@@ -43,13 +49,22 @@
             cursor: pointer;
             background-color: #fece51;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include md{
+                width: 80px;
+                padding: 6px;
+            }
 
             img{
                 width: 24px;
                 height: 24px;
+
+                @include md{
+                    width: 20px;
+                    height: 20px;
+                }
             }
         }
     }

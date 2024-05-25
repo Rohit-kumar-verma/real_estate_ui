@@ -47,7 +47,6 @@ nav{
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        background-color: #fcf5f3;
         height: 100%;
 
         @include md{
@@ -101,41 +100,52 @@ nav{
                 }
             }
         }
+
+        .signUp{
+            background-color: #fece51;
+            border-radius: 4px;
+          }
       
         .menuIcon{
             display: none;
             z-index: 98;
             transition:all 1s ease;
             position: relative;
-
+            
             img{
                 width: 36px;
                 height: 36px;
                 // aspect-ratio: 1/1;
                 cursor: pointer;
+                
             }
             @include sm{
                 display:inline;
             }
         }
         .menu{
-            position: absolute;
+            display: none;
             top: 0;
-            right: -50%;
-            background-color: black;
-            color: white;
-            height: 100vh;
-            width: 50%;
-            transition: all 1s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 42px;
-            font-size: 24px;
-
+            // right: -50%;
+                position: absolute;
+                background-color: black;
+                color: white;
+                height: 100%;
+                width: 50%;
+                transition: all 1s ease;
+                align-items: flex-end;
+                
             &.active{
+                // right: 0;
+                display: block;
                 right: 0;
+                z-index: 95;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 42px;
+                font-size: 24px;
             }
 
             @include sm{

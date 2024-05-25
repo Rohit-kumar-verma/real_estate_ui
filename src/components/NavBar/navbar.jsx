@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     const [open, setOpen]= useState(false);
-    const [user, serUser]= useState(true);
+    const [user, serUser]= useState(false);
 
   return (
     <nav>
@@ -30,8 +30,8 @@ const NavBar = () => {
             </div>
             ): (
                 <>
-                    <a href='/'className='px-2 py-0 text-[16px] my-1 font-semibold rounded-[2px]'>sign in</a>
-                    <a href='/' className='bg-yellow-500 px-2 py-0 text-[16px] my-1 font-semibold rounded-[2px]'>sign up</a>
+                    <a href='/' >Sign in</a>
+                    <a href='/' className='signUp'>Sign up</a>
                 </>
             )}
             <div className='menuIcon'>

@@ -1,12 +1,15 @@
+@import '../../responsive.scss';
+
 .listPage {
     display: flex;
-    height: 100vh; /* Ensure the page height is 100% of the viewport height */
+    height: 100%; /* Ensure the page height is 100% of the viewport height */
     
     .listContainer {
         flex: 3;
         height: 100%; /* Ensure it takes the full height of .listPage */
         display: flex;
         flex-direction: column;
+        // position: absolute;
 
         .wrapper {
             flex: 1; /* Ensure the wrapper takes the remaining space of .listContainer */
@@ -17,35 +20,6 @@
             overflow-y: scroll; /* Enable vertical scrolling */
             padding-bottom: 50px;
             position: relative; /* Uncomment if needed for layout */
-
-            /* Scrollbar styling for WebKit-based browsers (Chrome, Safari) */
-            &::-webkit-scrollbar {
-                display: none; /* Height of the horizontal scrollbar (if any) */
-            }
-            &:hover::-webkit-scrollbar {
-                width: 20px; /* Width of the vertical scrollbar */
-                height: 20px; /* Height of the horizontal scrollbar (if any) */
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: darkgrey; /* Color of the scrollbar thumb */
-                border-radius: 10px; /* Roundness of the scrollbar thumb */
-                border: 3px solid transparent; /* Creates padding around the thumb */
-                background-clip: content-box; /* Ensures the border does not overlap the thumb */
-            }
-
-            &::-webkit-scrollbar-track {
-                // background: #f1f1f1; /* Color of the scrollbar track */
-                border-radius: 10px; /* Roundness of the scrollbar track */
-                margin: 5px; /* Margin around the scrollbar track */
-            }
-
-            /* Scrollbar styling for Firefox */
-            &:hover{
-            scrollbar-width: thin; /* Possible values: auto, thin, none */
-            scrollbar-color: darkgrey transparent;/* thumb color and track color */
-            scroll-behavior: initial;
-             }
             
         }
     }
@@ -53,5 +27,8 @@
     .mapContainer {
         flex: 2;
         height: 100%; /* Ensure it takes the full height of .listPage */
+        @include md{
+            display: none;
+        }
     }
 }

@@ -8,7 +8,7 @@ const Card = ({item}) => {
         <img src={item.img} alt=''/>
       </Link>
       <div className='textContainer'>
-        <h1 className='title'>{item.title}</h1>
+      <Link to={`/${item.id}`}><h1 className='title'>{item.title}</h1></Link>
         <p className='address'>
           <img src='../../../src/assets/pin.png' alt=''/>
           <span>{item.address}</span>
