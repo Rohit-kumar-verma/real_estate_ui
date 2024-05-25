@@ -1,5 +1,6 @@
 import React from 'react'
 import './filter.scss'
+// import {search} from './../../src/assets'
 
 const filter = () => {
   return (
@@ -44,7 +45,7 @@ const filter = () => {
                 <input type="text" id="bedroom" name='bedroom' placeholder='any'/>
             </div>
             <button type='button'>
-                <img src='../../../src/assets/search.png' alt=''/>
+                <img src='../../../src/assets/search.png' alt='search'/>
             </button>
         </div>
     </div>

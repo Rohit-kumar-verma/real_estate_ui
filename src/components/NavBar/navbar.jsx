@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { navLinks } from '../../constants'
 import './navbar.scss'
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     const [open, setOpen]= useState(false);
-    console.log(open);
+    const [user, serUser]= useState(true);
 
   return (
     <nav>
@@ -18,8 +19,21 @@ const NavBar = () => {
             ))}
         </div>
         <div className='right'>
-            <a href='/'className='px-2 py-0 text-[16px] my-1 font-semibold rounded-[2px]'>sign in</a>
-            <a href='/' className='bg-yellow-500 px-2 py-0 text-[16px] my-1 font-semibold rounded-[2px]'>sign up</a>
+            {user ? (
+            <div className='user'>
+                <img src='../../../src/assets/favicon.png' alt='profile'/>
+                <span>John Doe</span>
+                <Link to='/profile' className='profile'>
+                    <div className="notification">3</div>
+                    <span>Profile</span>
+                    </Link>
+            </div>
+            ): (
+                <>
+                    <a href='/'className='px-2 py-0 text-[16px] my-1 font-semibold rounded-[2px]'>sign in</a>
+                    <a href='/' className='bg-yellow-500 px-2 py-0 text-[16px] my-1 font-semibold rounded-[2px]'>sign up</a>
+                </>
+            )}
             <div className='menuIcon'>
                 <img src={`../../../src/assets/${open ?'download_1':'download'}.png`} alt='menu-icon' onClick={() => setOpen((prev) => !prev)}/>
             </div>
